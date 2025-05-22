@@ -65,14 +65,14 @@ const PropertyListingForm = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-white">
+    <div className="max-w-4xl mx-auto p-4 bg-white">
       <h1 className="text-2xl font-bold mb-6 text-center">POST YOUR AD</h1>
       
       <div className="mb-6 border p-4">
-        <h2 className="text-lg font-semibold mb-2">SELECTED CATEGORY</h2>
-        <div className="flex justify-between items-center">
-          <span className="font-medium">{formData.category}</span>
-          <button className="text-blue-600 font-medium">Change</button>
+        <h2 className="text-lg font-bold mb-2">SELECTED CATEGORY</h2>
+        <div className="flex items-center">
+          <span className="text-sm text-gray-400">{formData.category}</span>
+          <button className="text-blue-600 font-medium ml-4 underline underline-offset-4">Change</button>
         </div>
       </div>
 
@@ -81,33 +81,33 @@ const PropertyListingForm = () => {
           <h2 className="text-lg font-semibold mb-4">INCLUDE SOME DETAILS</h2>
           
           <div className="mb-6">
-            <label className="block font-medium mb-2">Type *</label>
-            <div className="grid grid-cols-2 gap-2">
+            <label className="block mb-2">Type *</label>
+            <div className="grid grid-cols-2 gap-2 mr-96">
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'Flats / Apartments'})}
-                className={`p-2 border rounded ${formData.type === 'Flats / Apartments' ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                className={`p-2 border rounded ${formData.type === 'Flats / Apartments' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-44 h-10'}`}
               >
                 Flats / Apartments
               </button>
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'Independent / Builder Floors'})}
-                className={`p-2 border rounded ${formData.type === 'Independent / Builder Floors' ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                className={`p-2 border rounded ${formData.type === 'Independent / Builder Floors' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-60 h-10'}`}
               >
                 Independent / Builder Floors
               </button>
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'Farm House'})}
-                className={`p-2 border rounded ${formData.type === 'Farm House' ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                className={`p-2 border rounded ${formData.type === 'Farm House' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-32 h-10'}`}
               >
                 Farm House
               </button>
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'House & Villa'})}
-                className={`p-2 border rounded ${formData.type === 'House & Villa' ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                className={`p-2 border rounded ${formData.type === 'House & Villa' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-32 h-10'}`}
               >
                 House & Villa
               </button>
@@ -115,14 +115,14 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">BHK</label>
+            <label className="block mb-2">BHK</label>
             <div className="flex space-x-2">
               {[1, 2, 3, 4, '4+'].map(num => (
                 <button
                   key={num}
                   type="button"
                   onClick={() => setFormData({...formData, bhk: num})}
-                  className={`w-12 h-12 border rounded flex items-center justify-center ${formData.bhk === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                  className={`w-16 h-9 border rounded flex items-center justify-center ${formData.bhk === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
                 >
                   {num}
                 </button>
@@ -131,14 +131,14 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Bathrooms</label>
+            <label className="block mb-2">Bathrooms</label>
             <div className="flex space-x-2">
               {[1, 2, 3, 4, '4+'].map(num => (
                 <button
                   key={num}
                   type="button"
                   onClick={() => setFormData({...formData, bathrooms: num})}
-                  className={`w-12 h-12 border rounded flex items-center justify-center ${formData.bathrooms === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                  className={`w-16 h-9 border rounded flex items-center justify-center ${formData.bathrooms === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
                 >
                   {num}
                 </button>
@@ -149,7 +149,7 @@ const PropertyListingForm = () => {
 
         <div className="mb-8">
           <div className="mb-6">
-            <label className="block font-medium mb-2">Furnishing</label>
+            <label className="block mb-2">Furnishing</label>
             <div className="flex space-x-2">
               {['Furnished', 'Semi-Furnished', 'Unfurnished'].map(option => (
                 <button
@@ -165,7 +165,7 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Project Status</label>
+            <label className="block mb-2">Project Status</label>
             <div className="flex space-x-2">
               {['New Launch', 'Ready to Move', 'Under Construction'].map(option => (
                 <button
@@ -181,7 +181,7 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Listed by</label>
+            <label className="block mb-2">Listed by</label>
             <div className="flex space-x-2">
               {['Builder', 'Dealer', 'Owner'].map(option => (
                 <button
@@ -197,25 +197,25 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Super Builtup area sqft *</label>
+            <label className="block mb-2">Super Builtup area sqft *</label>
             <input
               type="number"
               name="superBuiltupArea"
               value={formData.superBuiltupArea}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
               required
             />
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Carpet Area sqft *</label>
+            <label className="block mb-2">Carpet Area sqft *</label>
             <input
               type="number"
               name="carpetArea"
               value={formData.carpetArea}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
               required
             />
           </div>
@@ -223,47 +223,47 @@ const PropertyListingForm = () => {
 
         <div className="mb-8">
           <div className="mb-6">
-            <label className="block font-medium mb-2">Maintenance (Monthly)</label>
+            <label className="block mb-2">Maintenance (Monthly)</label>
             <input
               type="text"
               name="maintenance"
               value={formData.maintenance}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Total Floors</label>
+            <label className="block mb-2">Total Floors</label>
             <input
               type="number"
               name="totalFloors"
               value={formData.totalFloors}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Floor No</label>
+            <label className="block mb-2">Floor No</label>
             <input
               type="number"
               name="floorNo"
               value={formData.floorNo}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Car Parking</label>
+            <label className="block mb-2">Car Parking</label>
             <div className="flex space-x-2">
               {[0, 1, 2, 3, '3+'].map(num => (
                 <button
                   key={num}
                   type="button"
                   onClick={() => setFormData({...formData, carParking: num})}
-                  className={`w-12 h-12 border rounded flex items-center justify-center ${formData.carParking === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
+                  className={`w-16 h-9 border rounded flex items-center justify-center ${formData.carParking === num ? 'bg-blue-100 border-blue-500' : 'border-gray-300'}`}
                 >
                   {num}
                 </button>
@@ -272,40 +272,46 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block font-medium mb-2">Facing</label>
+            <label className="block mb-2">Facing</label>
             <input
               type="text"
               name="facing"
               value={formData.facing}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-3/5 h-12 p-2 border border-gray-300 rounded"
             />
           </div>
         </div>
 
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Project Name</h2>
-          <input
-            type="text"
-            name="projectName"
-            value={formData.projectName}
-            onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded mb-4"
-          />
-
-          <div className="mb-4">
-            <label className="block font-medium mb-2">Ad title *</label>
+        <div className="mb-4">
+            <label className="block mb-2">Project Name</label>
             <div className="relative">
               <input
                 type="text"
                 name="adTitle"
                 value={formData.adTitle}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className="w-3/5 h-12 p-2 border border-gray-300 rounded mb-6"
                 maxLength={70}
                 required
               />
-              <span className="absolute right-2 top-2 text-gray-500">
+          <span className="absolute top-12 right-80 text-xs top-2 text-gray-500">
+                {characterCount.projectName} 0 / 70
+              </span>       
+              </div>
+          <div className="mb-4">
+            <label className="block mb-2">Ad title *</label>
+            <div className="relative">
+              <input
+                type="text"
+                name="adTitle"
+                value={formData.adTitle}
+                onChange={handleChange}
+                className="w-3/5 h-12 p-2 border border-gray-300 rounded"
+                maxLength={70}
+                required
+              />
+              <span className="absolute top-12 right-80 text-xs top-2 text-gray-500">
                 {characterCount.adTitle} / 70
               </span>
             </div>
@@ -321,11 +327,11 @@ const PropertyListingForm = () => {
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded h-32"
+                className="w-3/5 h-12 p-2 border border-gray-300 rounded h-32"
                 maxLength={4096}
                 required
               />
-              <span className="absolute right-2 bottom-2 text-gray-500">
+              <span className="absolute -bottom-6 right-80 text-xs text-gray-500">
                 {characterCount.description} / 4096
               </span>
             </div>
@@ -338,13 +344,13 @@ const PropertyListingForm = () => {
         </div>
               
         <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">SET A PRICE</h2>
+        <h2 className="text-xl font-bold mb-4">SET A PRICE</h2>
         <div className="mb-4">
-          <label className="block font-medium mb-2 text-gray-500">
+          <label className="block mb-2 text-gray-500 text-sm">
             Price<span className="text-gray-500">*</span>
           </label>
-          <div className="flex w-full">
-            <span className="inline-flex items-center px-4 border border-gray-300 border-r-0 rounded-l-md bg-gray-50 text-gray-500 text-lg">
+          <div className="flex w-3/5">
+            <span className="inline-flex items-center px-4 border border-gray-300 border-r-0 rounded-l-md bg-gray-50 text-gray-500 text-lg gap-1">
               ₹
             </span>
             <input
@@ -365,7 +371,7 @@ const PropertyListingForm = () => {
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">UPLOAD UP TO 20 PHOTOS</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-2 w-3/5">
           
           <div className="col-span-4">
             <label className="block text-sm font-medium mb-2">Add Photo</label>
@@ -416,31 +422,20 @@ const PropertyListingForm = () => {
             </div>
           ))}
         </div>
-        <div className="mt-2 text-sm text-gray-500">
-          {formData.photos.filter(Boolean).length} / 20 photos uploaded
+        <div className="mt-2 text-sm text-red-500">
+           This field is mandatory
         </div>
       </div>
 
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">CONFIRM YOUR LOCATION</h2>
         <div className="flex space-x-2 mb-4">
-          <button 
-            type="button"
-            className={`px-4 py-2 rounded ${formData.locationMethod === 'list' ? 'bg-blue-100 border border-blue-500' : 'bg-gray-200'}`}
-            onClick={() => setFormData({...formData, locationMethod: 'list'})}
-          >
-            LIST
-          </button>
-          <button 
-            type="button"
-            className={`px-4 py-2 rounded ${formData.locationMethod === 'current' ? 'bg-blue-100 border border-blue-500' : 'bg-gray-200'}`}
-            onClick={() => setFormData({...formData, locationMethod: 'current'})}
-          >
-            CURRENT LOCATION
-          </button>
+          <span className='border-b-4 border-blue-500 font-bold'> List</span>
+          <span className='absolute left-96'>Current Location</span>
         </div>
+        <hr  className='relative bottom-4'/>
         <div className="mb-4">
-          <label className="block font-medium mb-2">State *</label>
+          <label className="block mb-2">State *</label>
           <input
             type="text"
             name="state"
