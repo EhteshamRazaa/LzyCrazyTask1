@@ -68,17 +68,17 @@ const PropertyListingForm = () => {
     <div className="max-w-4xl mx-auto p-4 bg-white">
       <h1 className="text-2xl font-bold mb-6 text-center">POST YOUR AD</h1>
       
-      <div className="mb-6 border p-4">
-        <h2 className="text-lg font-bold mb-2">SELECTED CATEGORY</h2>
+      <div className="h-32 border p-4">
+        <h2 className="text-lg font-bold mb-6">SELECTED CATEGORY</h2>
         <div className="flex items-center">
           <span className="text-sm text-gray-400">{formData.category}</span>
-          <button className="text-blue-600 font-medium ml-4 underline underline-offset-4">Change</button>
+          <button className="text-blue-600 font-medium ml-4 border-b-2 border-blue-500">Change</button>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className='border p-9'>
         <div className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">INCLUDE SOME DETAILS</h2>
+          <h2 className="text-lg font-bold mb-4">INCLUDE SOME DETAILS</h2>
           
           <div className="mb-6">
             <label className="block mb-2">Type *</label>
@@ -93,7 +93,7 @@ const PropertyListingForm = () => {
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'Independent / Builder Floors'})}
-                className={`p-2 border rounded ${formData.type === 'Independent / Builder Floors' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-60 h-10'}`}
+                className={`p-2 border rounded relative -left-6 ${formData.type === 'Independent / Builder Floors' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-60 h-10'}`}
               >
                 Independent / Builder Floors
               </button>
@@ -107,7 +107,7 @@ const PropertyListingForm = () => {
               <button 
                 type="button"
                 onClick={() => setFormData({...formData, type: 'House & Villa'})}
-                className={`p-2 border rounded ${formData.type === 'House & Villa' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-32 h-10'}`}
+                className={`p-2 border rounded relative -left-1/3 ${formData.type === 'House & Villa' ? 'bg-blue-100 border-blue-500' : 'border-gray-300 w-32 h-10'}`}
               >
                 House & Villa
               </button>
@@ -295,7 +295,7 @@ const PropertyListingForm = () => {
                 maxLength={70}
                 required
               />
-          <span className="absolute top-12 right-80 text-xs top-2 text-gray-500">
+          <span className="absolute top-14 right-80 text-xs top-2 text-gray-500">
                 {characterCount.projectName} 0 / 70
               </span>       
               </div>
@@ -311,7 +311,7 @@ const PropertyListingForm = () => {
                 maxLength={70}
                 required
               />
-              <span className="absolute top-12 right-80 text-xs top-2 text-gray-500">
+              <span className="absolute top-14 right-80 text-xs top-2 text-gray-500">
                 {characterCount.adTitle} / 70
               </span>
             </div>
@@ -321,7 +321,7 @@ const PropertyListingForm = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block font-medium mb-2">Description *</label>
+            <label className="block mb-2">Description *</label>
             <div className="relative">
               <textarea
                 name="description"
@@ -374,7 +374,7 @@ const PropertyListingForm = () => {
         <div className="grid grid-cols-4 gap-2 w-3/5">
           
           <div className="col-span-4">
-            <label className="block text-sm font-medium mb-2">Add Photo</label>
+            <label className="block text-sm font-medium mb-2"></label>
           </div>
           
           {Array.from({ length: 20 }).map((_, index) => (
@@ -399,8 +399,9 @@ const PropertyListingForm = () => {
                   />
                   
                   <span className="relative inline-block">
+                    
                     <svg 
-                      className="w-8 h-8 text-gray-500" 
+                      className="w-8 h-8 text-gray-500 relative left-5" 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24" 
@@ -415,7 +416,8 @@ const PropertyListingForm = () => {
                       <circle cx="12" cy="13" r="4" />
                     </svg>
                     
-                    <span className="absolute -bottom-1 -right-1 bg-white text-black rounded-full w-5 h-5 flex items-center justify-center border border-gray-300 text-lg font-bold shadow">+</span>
+                    <span className="absolute right-4 top-5 bg-white text-black rounded-full w-5 h-5 flex items-center justify-center border border-gray-300 text-lg font-bold shadow">+</span>
+                    <span className='relative top-2'>Add Photo</span>
                   </span>
                 </label>
               )}
@@ -425,13 +427,14 @@ const PropertyListingForm = () => {
         <div className="mt-2 text-sm text-red-500">
            This field is mandatory
         </div>
+        <hr className='mt-8'/>
       </div>
 
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">CONFIRM YOUR LOCATION</h2>
+        <h2 className="text-lg font-bold mb-4">CONFIRM YOUR LOCATION</h2>
         <div className="flex space-x-2 mb-4">
-          <span className='border-b-4 border-blue-500 font-bold'> List</span>
-          <span className='absolute left-96'>Current Location</span>
+          <span className='border-b-4 border-blue-800 font-bold px-24'> LIST</span>
+          <span className='absolute right-2/4'>CURRENT LOCATION</span>
         </div>
         <hr  className='relative bottom-4'/>
         <div className="mb-4">
@@ -481,6 +484,7 @@ const PropertyListingForm = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
+
                 </div>
               </div>
               <input
@@ -503,17 +507,17 @@ const PropertyListingForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded bg-white"
+                className="w-2/4 p-2 border border-gray-300 rounded bg-white"
                 maxLength={30}
               />
-              <span className="absolute right-2 top-2 text-xs text-gray-500">
+              <span className="absolute top-12 right-80 text-xs text-gray-500">
                 {formData.name.length} / 30
               </span>
             </div>
           </div>
         </div>
         <div className="mb-6">
-          <div className="flex justify-between items-center p-2 border-hide  rounded">
+          <div className="flex gap-40 items-center p-2 border-hide  rounded">
             <span className="text-sm font-medium text-gray-700">Your phone number</span>
             <span className="text-gray-700">{formData.phoneNumber}</span>
           </div>
