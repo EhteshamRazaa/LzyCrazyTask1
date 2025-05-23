@@ -28,7 +28,8 @@ const PropertyListingForm = () => {
 
   const [characterCount, setCharacterCount] = useState({
     adTitle: 0,
-    description: 0
+    description: 0,
+    projectName: 0,
   });
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   
@@ -40,7 +41,7 @@ const PropertyListingForm = () => {
       [name]: value
     }));
 
-    if (name === 'adTitle' || name === 'description') {
+    if (name === 'adTitle' || name === 'description' || name === 'projectName') {
       setCharacterCount(prev => ({
         ...prev,
         [name]: value.length
@@ -302,15 +303,15 @@ const PropertyListingForm = () => {
             <div className="relative">
               <input
                 type="text"
-                name="adTitle"
-                value={formData.adTitle}
+                name="projectName"
+                value={formData.projectName}
                 onChange={handleChange}
                 className="w-3/5 h-12 p-2 border border-gray-300 rounded mb-6"
                 maxLength={70}
                 required
               />
-          <span className="absolute top-14 right-80 text-xs top-2 text-gray-500">
-                {characterCount.projectName} 0 / 70
+          <span className="absolute top-12 right-80 text-xs text-gray-500">
+                {characterCount.projectName} / 70
               </span>       
               </div>
           <div className="mb-4">
@@ -325,7 +326,7 @@ const PropertyListingForm = () => {
                 maxLength={70}
                 required
               />
-              <span className="absolute top-14 right-80 text-xs top-2 text-gray-500">
+              <span className="absolute top-12 right-80 text-xs text-gray-500">
                 {characterCount.adTitle} / 70
               </span>
             </div>
