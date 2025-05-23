@@ -9,8 +9,8 @@ const Footer = () => (
         {/* <span className="text-white text-2xl font-bold flex items-center">
           Car<span className="text-[#FFE066]">T</span>rade<span className="bg-white text-[#004B97] px-1 rounded ml-1">Tech</span>
         </span> */}
-        <source type="image/svg+xml" srcset="https://statics.olx.in/external/base/img/cartrade/logo/cartrade_tech.svg?v=1"></source>
-        <img src="https://statics.olx.in/external/base/img/cartrade/logo/cartrade_tech.svg?v=1" class="_2PIUn" alt="Car Trade" className="w-26 h-24"></img>
+        <source type="image/svg+xml" srcSet="https://statics.olx.in/external/base/img/cartrade/logo/cartrade_tech.svg?v=1"></source>
+        <img src="https://statics.olx.in/external/base/img/cartrade/logo/cartrade_tech.svg?v=1" className="_2PIUn w-26 h-24" alt="Car Trade"></img>
       </div>
       
       <div className="h-12 border-l border-white mx-8"></div>
@@ -27,7 +27,7 @@ const Footer = () => (
       <span className="text-white text-l flex items-center">
         {/* <span className="w-5 h-5 bg-white rounded mr-1 inline-block"></span>MOBILITY OUTLOOK */}
         
-        <img src="https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/logos/mobility/mobility-logo-red.png" class="_2PIUn" alt="mobility_outlook" className="w-26 h-16 text-white"></img>
+        <img src="https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/logos/mobility/mobility-logo-red.png" className="_2PIUn w-26 h-16 text-white" alt="mobility_outlook"></img>
       </span>
     </div>
     

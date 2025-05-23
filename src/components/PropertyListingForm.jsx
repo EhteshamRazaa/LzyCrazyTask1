@@ -30,6 +30,7 @@ const PropertyListingForm = () => {
     adTitle: 0,
     description: 0
   });
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   
 
   const handleChange = (e) => {
@@ -62,10 +63,23 @@ const PropertyListingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    setShowSuccessAlert(true);
+    
+    // Hide the alert after 3 seconds
+    setTimeout(() => {
+      setShowSuccessAlert(false);
+    }, 3000);
   };
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-white">
+      {/* Success Alert */}
+      {showSuccessAlert && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50">
+          Your post has been submitted successfully!
+        </div>
+      )}
+
       <h1 className="text-2xl font-bold mb-6 text-center">POST YOUR AD</h1>
       
       <div className="h-32 border p-4">
@@ -534,24 +548,6 @@ const PropertyListingForm = () => {
       </div>
 
       </form>
-
-      {/* <footer className="text-center text-sm text-gray-500 mt-8">
-        <div className="flex justify-center space-x-4 mb-4">
-          <span>Car Oracle ITGOV</span>
-          <span>GROUP</span>
-        </div>
-        <div className="flex justify-center space-x-4 mb-4">
-          <button className="text-blue-600">OK</button>
-          <button className="text-blue-600">crawale</button>
-          <button className="text-blue-600">bikevale</button>
-          <button className="text-blue-600">Car Oracle</button>
-          <button className="text-blue-600">MOBILITY OUTLOOK</button>
-        </div>
-        <div className="mb-4">
-          <button className="text-blue-600">Sitemap</button>
-        </div>
-        <p>Free Classifieds in India © 2006-2025 O.K</p>
-      </footer> */}
     </div>
   );
 };
